@@ -33,7 +33,7 @@
       </ul>
     </li>
     <li><a href="#git">Git</a></li>
-    <li><a href="#continuous-integration-(CI)">Continuous integration (CI)</a></li>
+    <li><a href="#continuous-integration">Continuous integration</a></li>
     <li><a href="#project-hierarchy-and-building">Project hierarchy and building</a></li>
     <li><a href="#automatically-generated-documentation">Automatically generated documentation</a></li>
     <li><a href="#static-code-analyzation">Static code analyzation</a></li>
@@ -141,7 +141,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Git
 
 <!-- -->
-## Continuous integration (CI)
+## Continuous integration
 
 <!-- -->
 ## Project hierarchy and building
