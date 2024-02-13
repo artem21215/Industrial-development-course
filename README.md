@@ -16,47 +16,34 @@
     <img src="images/logo.jpg" alt="Logo" width="800" height="800">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h1 align="center">Управление производственным процессом разработки ПО</h1>
 
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
 </div>
 
 
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Содержание</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">Requirements</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Unit testing</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#usage">Git</a></li>
+    <li><a href="#roadmap">Continuous integration (CI)</a></li>
+    <li><a href="#contributing">Project hierarchy and building</a></li>
+    <li><a href="#license">Automatically generated documentation</a></li>
+    <li><a href="#contact">Static code analyzation</a></li>
   </ol>
 </details>
 
@@ -144,7 +131,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Requirements
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -152,6 +139,25 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+
+<!-- -->
+## Unit testing
+
+<!-- -->
+## Git
+
+<!-- -->
+## Continuous integration (CI)
+
+<!-- -->
+## Project hierarchy and building
+
+<!-- -->
+## Automatically generated documentation
+
+<!-- -->
+## Static code analyzation
 
 
 <!-- ROADMAP -->
