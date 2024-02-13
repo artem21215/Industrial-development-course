@@ -1,5 +1,3 @@
-<a name="readme-top"></a>
-
 [![VK][vk-shield]][vk-url]
 
 <!-- PROJECT LOGO -->
@@ -13,9 +11,8 @@
 
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
+<a name="course-introduction"></a>
 <details>
   <summary>Содержание</summary>
   <ol>
@@ -45,168 +42,124 @@
 <!-- Проект на лабораторные работы -->
 ## Проект на лабораторные работы
 
-В рамках лабораторных работ вам предлагается реализовать законченный проект, включающий в себя:
+В рамках данного курса вам предлагается познакомиться с промышленной разработкой и попробовать себя в роли DevOps, Developer, QA.
+
+ Для введения в предметную область - вам необходимо выполнить лабораторные работы. Задача на лабораторные работы - реализовать мини версию проекта, используя практики промышленной разработки.
+
+* Цель лабораторных работ — изучение инструментария и практик, применяющихся при разработке программного обеспечения.
+
+В результате данного курса вам необходимо реализовать законченный проект, включающий в себя:
 
 1. Приложение, разработанное в соответствии с заданием.
 2. Систему сборки.
 3. Unit-тесты.
 4. Настроенные автоматические сборки (CI).
+5. Автоматичекую документацию.
+6. Отслеживание задач с помощью системы багтрекинга.
 
-Работа над проектом разбивается на короткие итерации. Процесс разработки должен быть зафиксирован в системе контроля версий (git). Проект должен быть опубликован на github.
+Работа над проектом разбивается на короткие итерации. Процесс разработки должен быть зафиксирован в системе контроля версий (git). Проект должен быть опубликован на Github (можно Gitlab, Bitbucket).
 
+* Цель курсовой работы — разработка законченного программного продукта. При этом важно отличать программу от программного продукта.
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+`Программный продукт` — программа, которую любой человек может запускать, тестировать, исправлять и развивать. Такая программа должна быть написана в обобщенном стиле. В частности, диапазон и вид входных данных должны быть настолько обобщенными, насколько это допускается базовым алгоритмом. Затем программа должна быть тщательно протестирована. Наконец, развитие программы в программный продукт требует создания подробной документации.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+**Пример недопустимого кода в программном продукте:**
+ ```c++
+ FILE *dict = fopen("/home/v.pupkin/myproject/dict.txt", "r");
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
+<!-- Требования -->
+## Требования к разработке <a name="course-requirements"></a>
 
+_Данные требования - обязательны в промышленной разработке. Код должен быть максимально общим, простым, понятным и достаточно эффективным._
 
-<!-- USAGE EXAMPLES -->
-## Requirements
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- -->
-## Unit testing
+1. Необходимо следовать code style соглашениям. В приоритете использование Google code style для вашего языка программирования, при большом желании можно выбрать другие соглашения, некоторые из них:
+  <br>`Google C++ Style Guide` https://google.github.io/styleguide/cppguide.html
+  <br>`PEP 7` https://www.python.org/dev/peps/pep-0007/
+  <br>`Qt Coding Style` https://wiki.qt.io/Qt_Coding_Style
+  
+2. Необходимо настроить clang-format для автоматического форматирования.
+  <br>_Позже будет проверяться с помощью статических анализаторов кода._
+3. Соблюдать консистентность кода в рамках проекта.
+4. Чтение документации к используемым инструментам и использование по современным стандартам.
+5. Терминал - наше все. Стараться использовать его по максимуму.
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- -->
 ## Git
 
+**Рекомендуется к прочтению: <a href="https://git-scm.com/book/en/v2">Pro Git</a>**
+### Создание локального git репозитория
+```sh
+$ cd <path-to-project>
+$ mkdir <project-name>
+$ cd <project-name>
+$ git init <git-repository-name> 
+$ echo "# <git-repository-name>" >> README.md
+$ git init
+$ git add README.md
+$ git commit -m "first commit"
+$ git branch -M master
+```
+
+### Работа с удаленным git репозиторием
+- [x] Создать и прокинуть ssh public ключик в удаленный репозиторий. (В github: Settings -> SSH and GPG keys -> New SSH key). Необходимо для синхронизации с удаленным репозиторием по протоколу SSH.
+
+```sh
+$ git remote add origin git@github.com:user-name/project-name.git
+$ git push -u origin master
+```
+
+### Краткий экскурс по основным командам
+<br>`git status` - Посмотреть текущую информацию об изменении в вашем репозитории. (staged/unstaged, tracked/untracked)
+<br>`git add <path-to-file>` - Добавить файл в staging. Удобно пользоваться **Git gui** утилитой для просмотра текущих изменений и добавлении их в staging стадию(готовность к созданию коммита).
+<br>`git commit` - Создать коммит. Удобно использовать git commit -m "commit content"
+<br>`git branch <branch-name>` - Создать ветку под именем branch-name, указывающую на HEAD. 
+<br>`git checkout <branch-name>` - Переместиться на ветку branch-name.
+<br>_P.S. Удобно использовать `git checkout -b <branch-name>` для создания новой ветки и перехода на нее одной командой._
+<br>`git fetch` - 
+<br>`git merge` - 
+<br>`git pull` - 
+<br>`git cherry-pick` - 
+<br>`git rebase` - 
+
+### Требования к оформлению коммитов
+Коммит должен быть ...
+ 
+
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
+
+<!-- Unit testing -->
+## Unit testing
+
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
+
 <!-- -->
 ## Continuous integration
+
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- -->
 ## Project hierarchy and building
 
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
+
+<!-- -->
+## Bug/Task tracking
+
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
+
 <!-- -->
 ## Automatically generated documentation
+
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- -->
 ## Static code analyzation
 
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -222,13 +175,10 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [vk-shield]: https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge&logo=vk&logoColor=violet&label=vklabel&labelColor=green&color=blue&link=https%3A%2F%2Fvk.com%2Fid270206159
 [vk-url]: https://vk.com/id270206159
-
 [product-screenshot]: images/screenshot.png
