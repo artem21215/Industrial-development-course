@@ -27,23 +27,23 @@
   <summary>Содержание</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Requirements</a>
+      <a href="#requirements">Requirements</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Unit testing</a>
+      <a href="#unit-testing">Unit testing</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Git</a></li>
-    <li><a href="#roadmap">Continuous integration (CI)</a></li>
-    <li><a href="#contributing">Project hierarchy and building</a></li>
-    <li><a href="#license">Automatically generated documentation</a></li>
-    <li><a href="#contact">Static code analyzation</a></li>
+    <li><a href="#git">Git</a></li>
+    <li><a href="#continuous-integration-(CI)">Continuous integration (CI)</a></li>
+    <li><a href="#project-hierarchy-and-building">Project hierarchy and building</a></li>
+    <li><a href="#automatically-generated-documentation">Automatically generated documentation</a></li>
+    <li><a href="#static-code-analyzation">Static code analyzation</a></li>
   </ol>
 </details>
 
