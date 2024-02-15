@@ -27,10 +27,12 @@
         <li><a href="#git-init-locally">Создание локального git репозитория</a></li>
         <li><a href="#git-init-remote">Работа с удаленным git репозиторием</a></li>
         <li><a href="#git-introduction">Краткий экскурс по основным командам</a></li>
+        <li><a href="#git-lab">Задача на лабу</a></li>
       </ul>
-    <li><a href="#unit-testing">Юнит тесты</a></li>
-    <li><a href="#continuous-integration">Continuous integration</a></li>
+    <li><a href="#bug-and-task-managent">Bug and Task менеджмент</a></li>
     <li><a href="#project-hierarchy-and-building">Project hierarchy and building</a></li>
+    <li><a href="#continuous-integration">Continuous integration</a></li>
+    <li><a href="#unit-testing">Юнит тесты</a></li>
     <li><a href="#automatically-generated-documentation">Automatically generated documentation</a></li>
     <li><a href="#static-code-analyzation">Static code analyzation</a></li>
   </ol>
@@ -111,6 +113,7 @@ $ git branch -M master
 ### Работа с удаленным git репозиторием
 - [x] Создать и прокинуть ssh public ключик в удаленный репозиторий. (В github: Settings -> SSH and GPG keys -> New SSH key). Необходимо для синхронизации с удаленным репозиторием по протоколу SSH.
 
+<a name="first-push-to-origin"></a>
 ```sh
 $ git remote add origin git@github.com:user-name/project-name.git
 $ git push -u origin master
@@ -119,30 +122,78 @@ $ git push -u origin master
 <a name="git-introduction"></a>
 ### Краткий экскурс по основным командам
 <br>`git status` - Посмотреть текущую информацию об изменении в вашем репозитории. (staged/unstaged, tracked/untracked)
+<br>`git log` - Посмотреть историю коммитов, начиная с HEAD.
 <br>`git add <path-to-file>` - Добавить файл в staging. Удобно пользоваться **Git gui** утилитой для просмотра текущих изменений и добавлении их в staging стадию(готовность к созданию коммита).
 <br>`git commit` - Создать коммит. Удобно использовать git commit -m "commit content"
+<br>`git reset <hash-commit | branch>` - Откатить текущую ветку на указанный коммит. Опции --hard и --soft.
 <br>`git branch <branch-name>` - Создать ветку под именем branch-name, указывающую на HEAD. 
 <br>`git checkout <branch-name>` - Переместиться на ветку branch-name.
 <br>_P.S. Удобно использовать `git checkout -b <branch-name>` для создания новой ветки и перехода на нее одной командой._
-<br>`git fetch` - 
-<br>`git merge` - 
-<br>`git pull` - 
-<br>`git cherry-pick` - 
-<br>`git rebase` - 
+<br>`git fetch` - обновление всех origin веток в локальном репозитории, при этом не выполняя merge локальных веток в обновленные origin
+<br>`git merge` - нахождение diff между двумя ветками, после чего создание мердж коммита в текущей ветки, который содержит diff между ветками.
+<br> **Важные опции merge** `--no-ff` - для наглядности операций в git history, создает merge commit в любом случае
+<br>`git pull` - объединение двух операций: git fetch и git merge. Сначала выполняется git fetch, после чего выполняется merge на состояние origin ветки.
+<br>`git cherry-pick` <hash_of_commit | branch_name | tag> - выполняет копию коммита, который указан в параметре и вставляет после текущего положения HEAD. 
+<br>`git rebase` - последовательность из cherry-pick.
+<br> **Важные опции rebase** `-i` - интерактивный ребейз. Позволяет посмотреть какие коммиты будут скопированы, а также позволяет выбросить некоторые из коммитов при копировании и другие возможности (см. в git help и файле редактирования коммита во время интерактивного ребейза).
+<br> `--onto`. Для указания диапазона, с какого коммита начинать ребейз, на каком заканчивать, куда копировать.
+<br> _Например: представим, что мы находимся на ветке FeatureName1 и хотим выполнить ребейз части этих коммитов в ветку FeatureMain._
+<br> _В этом помогает команда:_
+```sh
+ git rebase --onto FeatureMain <hash-start-commit> <hash-end-commit>
+ ```
+Данная команда выполнит последовательность cherry-pick начиная со следующего после hash-start-commit, заканчивая hash-end-commit.
+<br> 
 
 ### Требования к оформлению коммитов
-Коммит должен быть ...
+- [x] Каждый коммит должен содержать ровно одно изменение. Например, если в описании можно поставить союз "и" (_"действие" и "действие"_) - это не правильно. Должно быть разбито на 2 коммита. Перенос кода из одного места в файле в другое, добавление кода, удаление кода и изменение кода - разные действия. 
+<br> **Если коммиты разбиты правильно - ревьювер будет вам благодарен!**
+- [x] Оформлять коммиты на английском языке (общепринятое правило)
+- [x] Содержать ID задачи (пока что пропускаем этот пункт, будет требоваться после лабы про bug/task менеджмент)
+- [x] Добавлять заголовок. Очень краткое описание всех изменений, которое первым видит разработчик в инструменте контроля версий
+- [x] Делать отступ между заголовком и описанием. Пустая строка после заголовка, после пустой строки может быть, а может и не быть описание. В коммитах, где описание изменений понятны по одному лишь заголовку - описание не требуется
+- [x] Писать заголовок с заглавной буквы 
+- [x] Не ставить точку в конце заголовка
+- [x] Использовать в заголовке глагол в форме инфинитива
+- [x] Ограничивать длину строки в теле описания 72 символами
+- [x] Описание должно отвечать на вопросы "Что было сделано" и "Почему было сделано"
+
+**Пример хорошего коммита:**
+```
+[TaskID-123] Refactor validator implementation
+
+Improved code design for better readability
+```
+
+<a name="git-lab"></a>
+### Задача на лабораторную работу
+1. Инициализация репозитория:
+   1. Зарегистрироваться на github
+   2. Сгенерировать ssh ключ и добавить его в удаленный репозиторий
+   3. <a href="https://git-scm.com/download">Скачать и установить git</a>
+   4. Настройка среды (локально задать имя пользователя, электронную почту и т.д. с помощью утилиты git config --global, эти данные будут отображаться в каждом коммите конкретного пользователя)
+   5. Локально инициализировать репозиторий с помощью `git init`
+   6. Создать initial commit, содержащий файл README.md с кратким описанием лабораторной (3-5 строк) и файл .gitignore для игнорирования не функциональных изменений
+   7. Выполнить инициализирующий git push в удаленный репозиторий <a href="#first-push-to-origin">First git push</a> 
+2. Задать правила для master ветки. (Project settings -> Branches -> Add rule)
+3. Разбиться на пары, продемонстрировать работу каждой <a href="#git-introduction">команды</a>. Необходимо понимать каждую из этих команд, это необходимый минимум при работе с git 
+4. Творческое задание. Каждой паре необходимо создать 2 ветки и создать "осмысленный" конфликт. Осмысленный - означает вы должны понимать, что при слиянии двух веток - у вас появится конфликт. Допустим, что при выполнении git merge --no-ff ConflictedBranch возникает конфликт
+   1. Выполнить `git merge --no-ff ConflictedBranch` 
+   2. Добавить все изменения в git staging "как есть", без исправления конфликта.
+   3. Выполнить `git merge --continue`
+   4. Создать ветку ConflictFixing, починить конфликт и создать Pull request с таргетом на конфликтную ветку
+   5. Выполнить merge в github web
+   6. Выполнить локально git pull для обновления локального репозитория (теперь резолв конфликта вмержен в ветку)
+   7. Создать Pull request данной ветки с таргетом в мастер
+   8. Выполнить merge в мастер, выполняя все требования к мержу в protected ветку
+   9. Выполнить локально git pull для соответствия удаленному репозиторию
+5.  Придумать применение команды git rebase --onto BranchName1 Hash1 Hash2
  
-
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
-<!-- Unit testing -->
-## Unit testing
-
-<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
-
+<a name="bug-and-task-managent"></a>
 <!-- -->
-## Continuous integration
+## Bug and Task менеджмент
 
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
@@ -152,7 +203,12 @@ $ git push -u origin master
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- -->
-## Bug/Task tracking
+## Continuous integration
+
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
+
+<!-- Unit testing -->
+## Юнит тесты
 
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
@@ -162,23 +218,7 @@ $ git push -u origin master
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- -->
-## Static code analyzation
-
-<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+## Static code analyzation, code coverage
 
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
