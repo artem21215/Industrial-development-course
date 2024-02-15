@@ -224,6 +224,6 @@ Improved code design for better readability
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[vk-shield]: https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge&logo=vk&logoColor=violet&label=vklabel&labelColor=green&color=blue&link=https%3A%2F%2Fvk.com%2Fid270206159
+[vk-shield]: https://img.shields.io/badge/vk-brightgreen?style=for-the-badge&logo=vk&logoColor=violet&labelColor=green&color=blue&link=https%3A%2F%2Fvk.com%2Fid270206159
 [vk-url]: https://vk.com/id270206159
 [product-screenshot]: images/screenshot.png
