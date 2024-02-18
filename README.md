@@ -200,6 +200,9 @@ Improved code design for better readability
 <a name="bug-and-task-managent"></a>
 <!-- -->
 ## Bug and Task менеджмент
+**Рекомендуется к прочтению: <a href="https://community.atlassian.com/t5/Jira-Software-articles/How-to-Use-Jira-for-Project-Management-in-2023/ba-p/2332078">Pro Git</a>**
+<a name="JIRA-introduction"></a>
+### Краткий экскурс
 
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
