@@ -1,4 +1,6 @@
 [![VK][vk-shield]][vk-url]
+<br>
+[![Успеваемость][gdoc-shield]][g-doc]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -280,11 +282,6 @@ Dashboard служит для отображения различной стат
 
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
-<!-- -->
-## Continuous integration
-
-<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
-
 <!-- Unit testing -->
 ## Юнит тесты
 ### Введение
@@ -300,17 +297,54 @@ Dashboard служит для отображения различной стат
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- -->
+## Continuous integration
+### Введение
+Непрерывная интеграция — это методология разработки и набор практик, при которых в код вносятся небольшие изменения с частыми коммитами. И поскольку большинство современных приложений разрабатываются с использованием различных платформ и инструментов, то появляется необходимость в механизме интеграции и тестировании вносимых изменений.
+<br>
+<br>
+С технической точки зрения, цель CI — обеспечить последовательный и автоматизированный способ сборки, упаковки и тестирования приложений. При налаженном процессе непрерывной интеграции разработчики с большей вероятностью будут делать частые коммиты, что, в свою очередь, будет способствовать улучшению коммуникации и повышению качества программного обеспечения.
+<br>
+CI позволяет запускать интеграционные тесты, запускать различные проврки статического анализа кода, запускать автотесты и локализовать ошибки на каждом из этапов.
+<br>
+В рамках данного курса - необходимо настроить CI через github actions, для которого существует <a href="https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration">хорошо структурированная документация.</a>
+
+### Задача на лабораторную работу
+Настройка CI осуществляется через .yml конфигурационный файл. Вся информация о его структуре описана в документации по ссылке выше.
+Необходимо явно выделять каждый этап (task в терминах github actions): сборка, тесты, статический анализ кода...
+1. Изучить структуру .yml файла
+2. Создать task на сборку проекта
+3. Создать pull request, в котором сборка проходит успешно. Продемонстрировать, что task на сборку пройдена успешно 
+4. Создать pull request, в котором сборка завершается неудачно. Продемонстрировать, что CI сигнализирует об ошибке и запрещает merge
+5. Добавить task с прохождением юнит тестов
+6. Проверить, подобно пунктам 3-4 успешность/не успешность прохождения юнит тестов
+
+<p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
+
+<!-- -->
 ## Automatically generated documentation
+### Не требуется в рамках данного семестра
 
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
 
 <!-- -->
 ## Static code analyzation, code coverage
+### Не требуется в рамках данного семестра
 
 <p align="right">(<a href="#course-introduction">к содержанию</a>)</p>
+
+## Проектная работа
+1. Разбиться на команды
+2. Придумать и записать в табличку с успеваемостью (на самом верху страницы над мемом) тему проекта
+3. Разработать требования (документ). Можно кратко. Должна быть понятно и однозначно описана минимальная функциональность.
+В конце семестра требуется как минимум реализовать MVP
+
+`Требования к разработке проекта`
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [vk-shield]: https://img.shields.io/badge/vk-brightgreen?style=for-the-badge&logo=vk&logoColor=violet&labelColor=green&color=blue&link=https%3A%2F%2Fvk.com%2Fid270206159
+[gdoc-shield]: https://img.shields.io/badge/%D1%83%D1%81%D0%BF%D0%B5%D0%B2%D0%B0%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C-blue?style=for-the-badge&logo=microsoft%20excel&logoColor=violet&labelColor=green&color=blue&link=https%3A%2F%2Fvk.com%2Fid270206159
 [vk-url]: https://vk.com/id270206159
+[g-doc]: https://docs.google.com/spreadsheets/d/1rOrfdu-jtkrIhhdIXLHoPU4afmOkTZmvOrjFZ7qZyVI/edit?usp=sharing
 [product-screenshot]: images/screenshot.png
